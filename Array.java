@@ -1,20 +1,31 @@
-import java.util.*;
-class String{
-public static void main(String[] args){
-String a="hai how are you";
-int len=0;
-String[] b=a.split("");
-int c=b.length;
-for(int i=0;i<c;i++)
-{
-char[] d=a[i].toCharArray();
-int e=d.length;
-for(int j=0;j<e;j++)
-{
-if(d[j]==a[i+1])
-{
+import java.util.Scanner;
+public class matrix {
+public static void main(String[] args) {
+			Scanner in = new Scanner(System.in);
+			int array[][];
+			int sum = 0;
+			System.out.println("Enter the Number of Rows");
+			int r = in.nextInt();
+			System.out.println("Enter the Number of Columns");
+			int c = in.nextInt();
+			if (r == c) {
+				System.out.println("Enter the Matrix Elements for " + r + " rows and " + c + " Columns");
+				array = new int[r][c];
+				for (int i = 0; i < r; i++) {
+					for (int j = 0; j < c; j++) {
+						array[i][j] = in.nextInt();
+					}
+				}
+				for (int i = 1; i < r - 1; i++) {
+					for (int j = 1; j < c - 1; j++) {
+						sum += array[i][j];
+					}
+				}
+				System.out.println("The Middle Sum is : " + sum);
+			} else
+			{
+				System.out.println("Enter Same number of Rows and Columns");
+	        }
+	}
 
-++len;
-}
-}
 }
